@@ -61,15 +61,16 @@ class MenuButtonActions {
 
   setFocusToMenuitem(newMenuitem) {
     this.menuitemNodes.forEach(function (item) {
+    // R.G. Here to add the roving tabindex logic  ;)
+    //Changed JS to set the tabindex attribute of the item in focus to 0
       if (item==newMenuitem){
         item.setAttribute("tabindex", "0");
         item.focus();
       }
+      //Set the tabindex of items that are not in focus to -1
         else {
           item.setAttribute("tabindex", "-1")
         }
-
-// R.G. Here to add the roving tabindex logic  ;)
     });
   }
 
